@@ -17,10 +17,9 @@ void push(stack_t **stack, __attribute__((unused))unsigned int last_line)
 	}
 	new->next = '\0';
 	new->n = atoi(line[1]);
-
+	new->prev = '\0';
 	*stack = new;
 	new->next = tmp;
 	if (tmp != '\0')
-		tmp->prev = new->next;
-
+		tmp->prev = new;
 }
