@@ -4,11 +4,19 @@
  * 
  * 
 */
-void get_op_function(stack_t **head, unsigned int line_number)
+void get_op_function(stack_t **top, unsigned int line_number)
 {
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
+		{"div", _div},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	int i;
@@ -17,7 +25,7 @@ void get_op_function(stack_t **head, unsigned int line_number)
 	{
 		if (strcmp(line[0], ops[i].opcode) == 0)
 		{
-			ops[i].f(head, line_number);
+			ops[i].f(top, line_number);
 			return;
 		}
 	}
