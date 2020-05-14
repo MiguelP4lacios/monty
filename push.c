@@ -8,7 +8,7 @@ void push(stack_t **stack, __attribute__((unused))unsigned int last_line)
 {
 	stack_t *new, *tmp;
 
-	if (check_num(line[1]) == -1)
+	if (line[1] == NULL || check_num(line[1]) == -1)
 	{
 		fprintf(stderr, "L%i: usage: push integer\n", last_line);
 		release(NULL, NULL, 'r');
