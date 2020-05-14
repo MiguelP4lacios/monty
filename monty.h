@@ -61,7 +61,11 @@ int check_num(char *number);
 void delete_newline(char **delete);
 int empty_codes(char **string);
 void swap(stack_t **stack, unsigned int line_number);
-
+void pstr(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 
 #endif /* MONTY_H */
