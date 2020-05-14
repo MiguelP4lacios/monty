@@ -14,6 +14,9 @@ char **format_line(char *input)
 		return ('\0');
 	if (input[0] == '\0' || input[1] == '\0')
 		return ('\0');
+	delete_newline(&input);
+	if (empty_codes(&input) == 1)
+		return ('\0');
 	tokens = malloc(sizeof(char **) * 3);
 	if (tokens == NULL)
 	{
@@ -22,11 +25,11 @@ char **format_line(char *input)
 		free(tokens);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(input, " \n");
+	token = strtok(input, " ");
 	while (token != NULL && i <= 1)
 	{
 		tokens[i] = token;
-		token = strtok(NULL, " \n");
+		token = strtok(NULL, " ");
 		if (i >= 1)
 			break;
 		i++;

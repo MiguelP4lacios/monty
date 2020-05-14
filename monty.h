@@ -58,5 +58,10 @@ void _div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 int check_num(char *number);
+void delete_newline(char **delete);
+int empty_codes(char **string);
+
+
+
 
 #endif /* MONTY_H */
