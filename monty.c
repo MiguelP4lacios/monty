@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	in_stream = fopen(argv[1], "r");
-	if ( in_stream == NULL)
+	if (in_stream == NULL)
 	{
 		fprintf(stderr,"Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
