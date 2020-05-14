@@ -1,5 +1,6 @@
-push  fd    dssssssssssssss dfdf  1 dueb
-push 2 dhhd 
-pusdhshdhsssssssssssssssssssssssssdd h 3  fssdsdsssssssssssssssssssssssssssd
-dhd 3ds
-pall ffd
+
+push         1
+push 2
+push 3
+nop
+pall
