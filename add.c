@@ -12,6 +12,9 @@ void add(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		release(NULL, NULL, 'r');
+		free_dlistint(*stack);
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	first_ele = *stack;

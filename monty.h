@@ -47,6 +47,10 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int last_line);
+char **format_line(char *input);
+void free_double(char **d);
+void free_dlistint(stack_t *head);
+void release(FILE **in_stream, char **monty_codes, char op);
 void add(stack_t **stack, unsigned int last_line);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
@@ -55,4 +59,3 @@ void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
-
