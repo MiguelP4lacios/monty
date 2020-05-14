@@ -11,6 +11,9 @@ void push(stack_t **stack, __attribute__((unused))unsigned int last_line)
 	if (line[1][0] < 48 || line[1][0] > 57)
 	{
 		fprintf(stderr, "L%i: usage: push integer\n", last_line);
+		release(NULL, NULL, 'r');
+		free_dlistint(*stack);
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
@@ -18,6 +21,9 @@ void push(stack_t **stack, __attribute__((unused))unsigned int last_line)
 	if (new == '\0')
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		release(NULL, NULL, 'r');
+		free_dlistint(*stack);
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	new->next = '\0';

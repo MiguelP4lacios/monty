@@ -18,6 +18,7 @@ char **format_line(char *input)
 	if (tokens == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
+		release(NULL, NULL, 'r');
 		free(tokens);
 		exit(EXIT_FAILURE);
 	}

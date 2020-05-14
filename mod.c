@@ -14,6 +14,9 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		release(NULL, NULL, 'r');
+		free_dlistint(*stack);
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	first_ele = *stack;
@@ -21,6 +24,9 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (first_ele->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
+		release(NULL, NULL, 'r');
+		free_dlistint(*stack);
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	second_ele->n %= first_ele->n;
