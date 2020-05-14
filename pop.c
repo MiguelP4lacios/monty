@@ -10,7 +10,7 @@ void pop(stack_t **stack, unsigned int last_line)
 
 	if (*stack == '\0')
 	{
-		fprintf(stderr, "L%i: can't pop an empty stack", last_line);
+		fprintf(stderr, "L%i: can't pop an empty stack\n", last_line);
 		release(NULL, NULL, 'r');
 		free_dlistint(*stack);
 		free(line);
