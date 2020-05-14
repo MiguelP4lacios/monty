@@ -40,17 +40,22 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+extern char **line;
+char **format_line(char *input);
+void get_op_function(stack_t **top, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int last_line);
-void get_op_function(stack_t **head, unsigned int line_number);
 char **format_line(char *input);
 void free_double(char **d);
 void free_dlistint(stack_t *head);
 void release(FILE **in_stream, char **monty_codes, char op);
+void add(stack_t **stack, unsigned int last_line);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
 
-
-extern char **line;
 #endif /* MONTY_H */
