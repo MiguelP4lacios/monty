@@ -25,6 +25,7 @@ char **format_line(char *input)
 		free(tokens);
 		exit(EXIT_FAILURE);
 	}
+	tokens[0] = NULL, tokens[1] = NULL, tokens[2] = NULL;
 	token = strtok(input, " ");
 	while (token != NULL && i <= 1)
 	{
