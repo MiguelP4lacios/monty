@@ -17,6 +17,7 @@ void get_op_function(stack_t **top, unsigned int line_number)
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i;
