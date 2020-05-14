@@ -18,6 +18,9 @@ void get_op_function(stack_t **top, unsigned int line_number)
 		{"mul", mul},
 		{"mod", mod},
 		{"swap", swap},
+		{"rotl", rotl},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	int i;
