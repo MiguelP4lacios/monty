@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		if (n_line != '\0')
 			free(line);
 		line = format_line(monty_codes);
-		if (line == NULL || line[0][0] == '\n')
+		if (line == NULL || (line[0][0] == '\n' || line[0][0] == '#'))
 			continue;
 		else
 			get_op_function(&pila, n_line);
