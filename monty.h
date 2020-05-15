@@ -40,7 +40,19 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-extern char **line;
+/**
+ * struct arg - global
+ * @line: pointer
+ *
+ * Description: global variable
+*/
+typedef struct arg
+{
+	char **line;
+}global_t;
+
+global_t global;
+
 char **format_line(char *input);
 void get_op_function(stack_t **top, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);

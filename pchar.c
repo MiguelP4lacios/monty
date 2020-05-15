@@ -11,7 +11,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%i: can't pchar, stack empty\n", line_number);
 		release(NULL, NULL, 'r');
 		free_dlistint(*stack);
-		free(line);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	if (stack[0]->n < 32 || stack[0]->n > 126)
@@ -19,7 +19,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%i: can't pchar, value out of range\n", line_number);
 		release(NULL, NULL, 'r');
 		free_dlistint(*stack);
-		free(line);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 
