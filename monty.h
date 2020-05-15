@@ -49,7 +49,8 @@ typedef struct instruction_s
 typedef struct arg
 {
 	char **line;
-}global_t;
+}
+global_t;
 
 global_t global;
 
@@ -78,6 +79,10 @@ void pchar(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void push_end(stack_t **stack, stack_t *new_stack);
+void stack_queue(stack_t **stack, unsigned int line_number);
+int check_mode(char op);
+
 
 
 #endif /* MONTY_H */

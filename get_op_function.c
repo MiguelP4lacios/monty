@@ -22,6 +22,8 @@ void get_op_function(stack_t **top, unsigned int line_number)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotr", rotr},
+		{"queue", stack_queue},
+		{"stack", stack_queue},
 		{NULL, NULL}
 	};
 	int i;
