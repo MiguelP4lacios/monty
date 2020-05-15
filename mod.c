@@ -16,7 +16,7 @@ void mod(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		release(NULL, NULL, 'r');
 		free_dlistint(*stack);
-		free(line);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	first_ele = *stack;
@@ -26,7 +26,7 @@ void mod(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		release(NULL, NULL, 'r');
 		free_dlistint(*stack);
-		free(line);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	second_ele->n %= first_ele->n;

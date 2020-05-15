@@ -28,7 +28,7 @@ void get_op_function(stack_t **top, unsigned int line_number)
 
 	for (i = 0; ops[i].opcode != NULL; i++)
 	{
-		if (strcmp(line[0], ops[i].opcode) == 0)
+		if (strcmp(global.line[0], ops[i].opcode) == 0)
 		{
 			ops[i].f(top, line_number);
 			return;
@@ -36,8 +36,9 @@ void get_op_function(stack_t **top, unsigned int line_number)
 	}
 	if (ops[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, line[0]);
-		free(line);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number,
+		global.line[0]);
+		free(global.line);
 		free_dlistint(*top);
 		release(NULL, NULL, 'r');
 		exit(EXIT_FAILURE);
