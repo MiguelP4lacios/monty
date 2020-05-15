@@ -22,10 +22,16 @@ int check_mode(char op)
 	if (op == 'c')
 	{
 		if (mode != '\0')
+		{
 			if (strcmp("stack", mode) == 0)
+			{
 				return (0);
+			}
 			else
-				return (-1)
+			{
+				return (-1);
+			}
+		}
 		else
 			return (0);
 	}
