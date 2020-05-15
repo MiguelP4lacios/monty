@@ -5,7 +5,6 @@
  *@argv: arguments
  *Return: success
 */
-char **line = NULL;
 int main(int argc, char **argv)
 {
 	FILE *in_stream = NULL;
@@ -30,15 +29,16 @@ int main(int argc, char **argv)
 		n_line++;
 		release(&in_stream, &monty_codes, 's');
 		if (n_line != '\0')
-			free(line);
-		line = format_line(monty_codes);
-		if (line == NULL || (line[0][0] == '\n' || line[0][0] == '#'))
+			free(global.line);
+		global.line = format_line(monty_codes);
+		if (global.line == NULL || (global.line[0][0] == '\n' ||
+		global.line[0][0] == '#'))
 			continue;
 		else
 			get_op_function(&pila, n_line);
 	}
 	release(NULL, NULL, 'r');
-	free(line);
+	free(global.line);
 	free_dlistint(pila);
 	return (EXIT_SUCCESS);
 }

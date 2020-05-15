@@ -15,7 +15,7 @@ void mul(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 		release(NULL, NULL, 'r');
 		free_dlistint(*stack);
-		free(line);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	first_ele = *stack;
