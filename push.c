@@ -29,8 +29,16 @@ void push(stack_t **stack, __attribute__((unused))unsigned int last_line)
 	new->next = '\0';
 	new->n = atoi(global.line[1]);
 	new->prev = '\0';
-	*stack = new;
-	new->next = tmp;
-	if (tmp != '\0')
-		tmp->prev = new;
+	if (check_mode('c') == 0)
+	{
+		*stack = new;
+		new->next = tmp;
+		if (tmp != '\0')
+			tmp->prev = new;
+	}
+	else
+	{
+		push_end(stack, new);
+	}
+
 }
